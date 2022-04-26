@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>b31b9366-5bb8-4f13-82ee-ad91b4f2f533</UserSecretsId>
+  </PropertyGroup> 
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="Azure.Extensions.AspNetCore.Configuration.Secrets" Version="1.0.0" />
+    <PackageReference Include="Azure.Identity" Version="1.4.0-beta.1" />
+    <PackageReference Include="Azure.Security.KeyVault.Secrets" Version="4.2.0-beta.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.18" />
+    <PackageReference Include="Microsoft.Identity.Web" Version="1.20.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FacturacionApi.CrossCutting\FacturacionApi.CrossCutting.csproj" />
+    <ProjectReference Include="..\FacturacionApi.Interface\FacturacionApi.Interface.csproj" />
+    <ProjectReference Include="..\FacturacionApi.Service\FacturacionApi.Service.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="appsettings.json" />
+    <Content Remove="appsettings.*.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="appsettings.json" CopyToOutputDirectory="Always" />   
+    <Content Include="appsettings.*.json" DependentUpon="appsettings.json" CopyToOutputDirectory="Always" CopyToPublishDirectory="Never" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Template\Quotation.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Template\QuotationDetails.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Target Name="RenameAppsettings" BeforeTargets="Publish">
+    <Move SourceFiles="$(OutDir)\appsettings.$(ASPNETCORE_ENVIRONMENT).json" DestinationFiles="$(PublishDir)\appsettings.json" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties appsettings_1json__JsonSchema="" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

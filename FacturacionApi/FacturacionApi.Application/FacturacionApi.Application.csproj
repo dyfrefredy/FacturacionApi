@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.78" />
+    <PackageReference Include="NLog" Version="4.7.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FacturacionApi.Common\FacturacionApi.Common.csproj" />
+    <ProjectReference Include="..\FacturacionApi.Infrastructure\FacturacionApi.Infrastructure.csproj" />
+    <ProjectReference Include="..\FacturacionApi.Interface\FacturacionApi.Interface.csproj" />
+    <ProjectReference Include="..\FacturacionApi.Model\FacturacionApi.Model.csproj" />
+  </ItemGroup>
+
+</Project>

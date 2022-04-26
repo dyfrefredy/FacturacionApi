@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>Avianca.Carga.CustomerService.Database</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{f161250f-801e-4e1a-a66a-bc83385b55fb}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>Avianca.Carga.CustomerService.Database</RootNamespace>
+    <AssemblyName>Avianca.Carga.CustomerService.Database</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="ScriptsData" />
+    <Folder Include="prv\" />
+    <Folder Include="prv\Tables\" />
+    <Folder Include="pha\" />
+    <Folder Include="pha\Tables\" />
+    <Folder Include="cts\" />
+    <Folder Include="cts\Tables\" />
+    <Folder Include="adm\" />
+    <Folder Include="adm\Tables\" />
+    <Folder Include="Security\" />
+    <Folder Include="prv\Stored Procedures\" />
+    <Folder Include="cts\Stored Procedures\" />
+    <Folder Include="prv\User Defined Types\" />
+    <Folder Include="cts\User Defined Types\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="prv\Tables\MasterGuide.sql" />
+    <Build Include="prv\Tables\FlightInfo.sql" />
+    <Build Include="pha\Tables\ShipmentDetail.sql" />
+    <Build Include="pha\Tables\Shipment.sql" />
+    <Build Include="pha\Tables\RpaHistoric.sql" />
+    <Build Include="pha\Tables\EblLoad.sql" />
+    <Build Include="pha\Tables\Container.sql" />
+    <Build Include="pha\Tables\CommercialProcedure.sql" />
+    <Build Include="cts\Tables\QuoteDetails.sql" />
+    <Build Include="cts\Tables\QuotationStatus.sql" />
+    <Build Include="cts\Tables\Quotation.sql" />
+    <Build Include="cts\Tables\Itinerary.sql" />
+    <Build Include="adm\Tables\User.sql" />
+    <Build Include="adm\Tables\TravelDocumentType.sql" />
+    <Build Include="adm\Tables\Status.sql" />
+    <Build Include="adm\Tables\Station.sql" />
+    <Build Include="adm\Tables\State.sql" />
+    <Build Include="adm\Tables\RoleModule.sql" />
+    <Build Include="adm\Tables\Role.sql" />
+    <Build Include="adm\Tables\ProjectType.sql" />
+    <Build Include="adm\Tables\ParametricTable.sql" />
+    <Build Include="adm\Tables\Module.sql" />
+    <Build Include="adm\Tables\MeasureType.sql" />
+    <Build Include="adm\Tables\MeasurementUnit.sql" />
+    <Build Include="adm\Tables\LoadType.sql" />
+    <Build Include="adm\Tables\HollyDay.sql" />
+    <Build Include="adm\Tables\DocumentType.sql" />
+    <Build Include="adm\Tables\DepositType.sql" />
+    <Build Include="adm\Tables\Deposit.sql" />
+    <Build Include="adm\Tables\CustomerType.sql" />
+    <Build Include="adm\Tables\UserStation.sql" />
+    <Build Include="adm\Tables\CustomerDetail.sql" />
+    <Build Include="adm\Tables\Customer.sql" />
+    <Build Include="adm\Tables\Country.sql" />
+    <Build Include="adm\Tables\ConfigurationsTable.sql" />
+    <Build Include="adm\Tables\City.sql" />
+    <Build Include="adm\Tables\ArrangementLoad.sql" />
+    <Build Include="adm\Tables\Airport.sql" />
+    <Build Include="adm\Tables\AirlineCross.sql" />
+    <Build Include="adm\Tables\Airline.sql" />
+    <Build Include="Security\cargo-apps-user.sql" />
+    <Build Include="Security\RoleMemberships.sql" />
+    <Build Include="prv\Stored Procedures\SP_SkychainInsert.sql" />
+    <Build Include="prv\Stored Procedures\SP_Dian166Insert.sql" />
+    <Build Include="cts\Stored Procedures\SP_ItineraryInsert.sql" />
+    <Build Include="prv\User Defined Types\UTT_Skychain.sql" />
+    <Build Include="prv\User Defined Types\UTT_Dian1166.sql" />
+    <Build Include="cts\User Defined Types\UTT_Itinerary.sql" />
+    <Build Include="Security\prv.sql" />
+    <Build Include="Security\pha.sql" />
+    <Build Include="Security\cts.sql" />
+    <Build Include="Security\adm.sql" />
+    <Build Include="adm\Tables\UserType.sql" />
+    <Build Include="adm\Tables\UserCtsDetail.sql" />
+  </ItemGroup>
+</Project>

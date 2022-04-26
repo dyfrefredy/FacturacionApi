@@ -1,0 +1,25 @@
+﻿CREATE TABLE [pha].[RpaHistoric] (
+    [Id]           INT           NOT NULL,
+    [CarrierId]    INT           NULL,
+    [FitNum]       INT           NULL,
+    [Org]          VARCHAR (255) NULL,
+    [BrdPt]        VARCHAR (255) NULL,
+    [Dest]         VARCHAR (255) NULL,
+    [OffPt]        VARCHAR (255) NULL,
+    [Date]         DATETIME      NULL,
+    [FitPrio]      VARCHAR (255) NULL,
+    [DocNum]       VARCHAR (255) NULL,
+    [Pieces]       INT           NULL,
+    [Weight]       INT           NULL,
+    [Agent]        VARCHAR (255) NULL,
+    [ManifestDesc] VARCHAR (255) NULL,
+    [SHC]          VARCHAR (255) NULL,
+    [Remarks]      VARCHAR (255) NULL,
+    [MvtSt]        VARCHAR (255) NULL,
+    [pha]          VARCHAR (255) NULL,
+    [OriginRed]    VARCHAR (50)  NULL,
+    [DestinyRed]   VARCHAR (50)  NULL,
+    [Reload]       BIT           NULL,
+    CONSTRAINT [PK_Pharma.RpaHistoric] PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
